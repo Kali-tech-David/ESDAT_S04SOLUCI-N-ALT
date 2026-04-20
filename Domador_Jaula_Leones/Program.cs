@@ -1,4 +1,44 @@
-﻿using System;
+﻿/*
+ * Crea una lista doble Usando como clases:
+ * Domador:
+ *  Atributos:
+ *      Docil:  Apunta a la primera Jaula
+ *      Rebelde:  Apunta al ultima Jaula
+ *  Metodos:
+ *      Mostrar: muestra las jaulas a partir del Rebelde al Docil
+ *      Domesticar: Pide nombre y edad y agrega 1 jaula por el lado Docil
+ *      MayoresA: Pide de parametro una edad y muestra los Leones 
+ *          a partir de esa edad
+ *      MezclaParesInicio: Pide de parametro un segundo domador y 
+ *          agrega al final del Domador actual solo los leones con edad par 
+ *
+ * Jaula
+ *  Atributos:
+ *      Leon:  Apunta al primer Leon
+ *      Sig:  Apunta a la siguiente Jaula
+ *      Ant:  Apunta a la anterior Jaula
+ *  Metodos:
+ *      
+ *      
+ * Leon
+ *  Atributos:
+ *      Nombre:  Apunta al primer Leon
+ *      Edad:  Apunta al ultimo Leon
+ *  Metodos:
+ *      ToString: muestra El nombre y Edad del Leon
+ *      
+ *      
+ * Problema: Cree un menu donde se agreguen Jaulas (con sus leones) al 
+ * cuidado de un Domador. El menu de opciones sera: 
+ * 1-Agrega Domestica Leon: usa metodo Domesticar
+ * 2-Muestra Leones: usa metodo Mostrar
+ * 3-Muestra Leones mayores a: usa metodo MayoresA
+ * 4-Mezcla: pide cuantas jaulas se agregaran a un nuevo domador y 
+ *  pedira los datos de los respectivos leones y usar el metodo 
+ *  MezclaParesInicio
+ * 9-Salir
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Runtime.CompilerServices;

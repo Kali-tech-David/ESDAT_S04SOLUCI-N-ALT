@@ -128,26 +128,31 @@ namespace Domador_Jaula_Leones
             else
             {
                 int cont = cantleones;
-                Jaula jaulactual = null;
+                Jaula jaulactualsec = null;
                 do
                 {
                     Secundario_Domador.Domesticar();
 
-                    if (jaulactual == null)
+                    if (jaulactualsec == null)
                     {
-                        jaulactual = Secundario_Domador.Docil;
-                        if (jaulactual == null)
+                        jaulactualsec = Secundario_Domador.Docil;
+                        if (jaulactualsec == null)
                             Console.WriteLine("\n León inválido");
                         else
                         {
-                            Console.WriteLine("Leon creado");
+                            Console.WriteLine("León creado");
                             cont--;
                         }
                     }
+                    else if(jaulactualsec.Anterior != null)
+                    {
+                        Console.WriteLine("León creado");
+                        jaulactualsec = jaulactualsec.Anterior;
+                        cont--;
+                    }
                     else
                     {
-                        jaulactual = jaulactual.Anterior;
-                        cont--;
+                        Console.WriteLine("León inválido");
                     }
                 } while (cont > 0);
                 Secundario_Domador.Mostrar();
@@ -156,20 +161,20 @@ namespace Domador_Jaula_Leones
                     + " según las edades pares");
                 Console.ReadKey();
 
-                jaulactual = Secundario_Domador.Docil;
+                jaulactualsec = Secundario_Domador.Docil;
 
-                while(jaulactual != null)
+                while(jaulactualsec != null)
                 {
-                    if(jaulactual.Leon1.Edad % 2 == 0)
+                    if(jaulactualsec.Leon1.Edad % 2 == 0)
                     {
                         Jaula jaultemp = new Jaula();
-                        jaultemp.Leon1 = jaulactual.Leon1;
+                        jaultemp.Leon1 = jaulactualsec.Leon1;
 
                         Rebelde.Siguiente = jaultemp;
                         jaultemp.Anterior = Rebelde;
                         Rebelde = jaultemp;    
                     }
-                    jaulactual = jaulactual.Siguiente;
+                    jaulactualsec = jaulactualsec.Siguiente;
                 }
             }
         }
